@@ -9,6 +9,7 @@ body {
   font-family: "KoHo", sans-serif;
   font-weight: normal;
   margin: 0;
+  position: relative;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -17,12 +18,14 @@ h1 {
   font-size: 3rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+  margin-top: 0;
 }
 
 h2 {
   font-size: 2.4rem;
   font-weight: 500;
   letter-spacing: 0.02em;
+  margin-top: 0;
 }
 
 h3 {
@@ -30,6 +33,7 @@ h3 {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  margin-top: 0;
 }
 
 p,
@@ -47,14 +51,113 @@ small {
   letter-spacing: 0.003em;
 }
 
+p {
+  margin: 0.5rem;
+}
+
 ul {
   list-style: none;
+  margin: 0;
   padding-left: 0;
 }
 
-.container {
-  margin: auto;
-  max-width: 80%;
-  padding: 2rem 2rem;
+.layout-container {
+  min-height: 100vh;
+}
+
+.layout-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.layout-footer {
+  background-color: #d0d0d0;
+  bottom: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  text-align: center;
+}
+
+.nav {
+  background-color: #323232;
+}
+
+.nav-list {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.nav-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
+  position: relative;
+  text-align: center;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in;
+}
+
+.nav-item:hover {
+  background-color: #7768ae;
+}
+
+.nav-link {
+  color: #fff;
+  display: block;
+  font-size: 2rem;
+  padding: 2rem;
+  text-decoration: none;
+}
+
+.hero {
+  background: no-repeat bottom;
+  background-position-y: 50%;
+  height: 50vh;
+  position: relative;
+}
+
+.hero-content {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(208, 208, 208, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+
+.hero-content p {
+  display: block;
+  font-size: 2.5rem;
+  text-align: center;
+  width: 100%;
 }
 /*# sourceMappingURL=styles.css.map */
