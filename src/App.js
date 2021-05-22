@@ -1,9 +1,12 @@
-import "./scss/styles.css";
+import Header from "./js/header";
+import Footer from "./js/footer";
 
 function App() {
   return (
-    <div className="layout-container">
-    </div>
+    <>
+      <Header/>
+      <Footer />
+    </>
   );
 }
 

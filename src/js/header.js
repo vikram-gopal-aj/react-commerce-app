@@ -4,12 +4,17 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
+import products from "../products.json";
 
 import Home from "./home";
 import Products from "./products";
 import GlobalComponents from "./global";
 
-function Header() {
+function Header(props) {
+  const productsArray = products.products.map(function (product, i) {
+    return product;
+  });
+
   return (
     <Router>
       <header className="layout-header">
@@ -65,9 +70,17 @@ function Header() {
         </nav>
       </header>
       <Switch>
-          <Route exact path="/" component={Home}></Route>
-          <Route exact path="/products" component={Products}></Route>
-          <Route exact path="/global" component={GlobalComponents}></Route>
+        <Route
+          render={(props) => <Home {...props} products={productsArray} />}
+          exact
+          path="/"
+        ></Route>
+        <Route
+          render={(props) => <Products {...props} products={productsArray} />}
+          exact
+          path="/products"
+        ></Route>
+        <Route exact path="/global" component={GlobalComponents}></Route>
       </Switch>
     </Router>
   );

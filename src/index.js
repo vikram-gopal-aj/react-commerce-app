@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from "./js/header";
-import Footer from "./js/footer";
 import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./scss/styles.css";
 import reportWebVitals from './reportWebVitals';
 
+import App from './App';
+
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Footer />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
