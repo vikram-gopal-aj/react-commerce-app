@@ -1,5 +1,5 @@
 import Hero from "./blocks/hero";
-import ProductCarousel from "./blocks/product-carousel";
+import ProductSlider from "./blocks/product-carousel";
 import products from "../products.json";
 
 function Home() {
@@ -10,12 +10,12 @@ function Home() {
   return (
     <div className="layout-container">
       <Hero
-        image='/hero-images/hero2.jpg'
+        image="/hero-images/hero2.jpg"
         alt="Staying Fresh Hero"
         title="Only the fresh"
         leadtext="What you want. We have it all"
       />
-      <ProductCarousel products={productArray} />
+      <ProductSlider slidertitle="Featured Products" products={productArray} />
     </div>
   );
 }

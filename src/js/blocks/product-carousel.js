@@ -1,41 +1,54 @@
 import Slider from "react-slick";
+import Product from "./product";
 
-function ProductSlide(props) {
-  const product = props.product;
-  return (
-    <div className="product-card">
-      <img
-        className="product-img"
-        alt={product.title}
-        src={`/product-images/${product.filename}`}
-      />
-      <h3 className="product-title">{product.title}</h3>
-      <p className="product-desc">{product.description}</p>
-      <span className="product-price">{product.price}</span>
-      <span className="product-rating">{product.rating}</span>
-    </div>
-  );
-}
-
-function ProductCarousel(props) {
+function ProductSlider(props) {
   const products = props.products;
   const productSlides = [];
   products.forEach(function (product) {
-    productSlides.push(<ProductSlide key={product.title} product={product} />);
+    if (parseInt(product.rating) < 5) {
+      return;
+    }
+    productSlides.push(<Product key={product.title} product={product} />);
   });
   const sliderSettings = {
     dots: false,
-    arrows: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2000,
     infinite: true,
     speed: 300,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   return (
-    <div className="App">
+    <div className="product-slider">
+      <h1>{props.slidertitle}</h1>
       <Slider {...sliderSettings}>{productSlides}</Slider>
     </div>
   );
 }
 
-export default ProductCarousel;
+export default ProductSlider;

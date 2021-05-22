@@ -59,7 +59,7 @@ small {
 }
 
 p {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 ul {
@@ -75,6 +75,7 @@ ul {
 .layout-header {
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .layout-footer {
@@ -120,7 +121,7 @@ ul {
 .hero {
   background: no-repeat bottom;
   background-position-y: 50%;
-  height: 50vh;
+  height: 35vh;
   position: relative;
   &-content {
     align-items: center;
@@ -142,5 +143,49 @@ ul {
       text-align: center;
       width: 100%;
     }
+  }
+}
+
+.slick {
+  &-slide > div {
+    padding: 0 1rem;
+  }
+  &-list {
+    margin: 0 -1rem;
+  }
+}
+
+.product {
+  &-slider {
+    margin: 3rem 2rem;
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &-img {
+    border: 1px solid $grey;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    img {
+      max-height: 25.4rem;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-title {
+    margin-bottom: 0.5rem;
+  }
+
+  &-price {
+    color: $purple;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  &-rating {
+    display: block;
   }
 }
