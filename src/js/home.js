@@ -1,4 +1,3 @@
-import heroimage from "../imgs/hero2.jpg";
 import Hero from "./blocks/hero";
 import ProductCarousel from "./blocks/product-carousel";
 import products from "../products.json";
@@ -11,7 +10,7 @@ function Home() {
   return (
     <div className="layout-container">
       <Hero
-        image={heroimage}
+        image='/hero-images/hero2.jpg'
         alt="Staying Fresh Hero"
         title="Only the fresh"
         leadtext="What you want. We have it all"

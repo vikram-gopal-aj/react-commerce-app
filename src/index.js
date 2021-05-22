@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from "./js/header";
 import Footer from "./js/footer";
+import "slick-carousel/slick/slick.css"; 
 import "./scss/styles.css";
 import reportWebVitals from './reportWebVitals';
 
